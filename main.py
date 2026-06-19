@@ -7,8 +7,7 @@ st.set_page_config(page_title="Sales Analysis Dashboard", layout="wide")
 
 st.title("Sales Data Analysis Dashboard")
 
-file_path = "./data/sales_data.csv"
-df = pd.read_csv(file_path)
+df = pd.read_csv("data/sales_data.csv")
 
 df.columns = df.columns.str.strip().str.lower().str.replace(" ", "_")
 df = df.drop_duplicates()
