@@ -6,7 +6,15 @@ import os
 st.set_page_config(page_title="Sales Analysis Dashboard", layout="wide")
 
 st.title("Sales Data Analysis Dashboard")
+import os
 
+st.write("Current directory:", os.getcwd())
+st.write("Files in root:", os.listdir("."))
+
+if os.path.exists("data"):
+    st.write("Data folder:", os.listdir("data"))
+else:
+    st.error("data folder not found")
 df = pd.read_csv("data/sales_data.csv")
 
 df.columns = df.columns.str.strip().str.lower().str.replace(" ", "_")
