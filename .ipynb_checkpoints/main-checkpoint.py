@@ -7,7 +7,7 @@ st.set_page_config(page_title="Sales Analysis Dashboard", layout="wide")
 
 st.title("Sales Data Analysis Dashboard")
 
-df = pd.read_csv("data/sales_data.csv")
+df = pd.read_csv("data/Sales_Data_Analysis_Dataset_5000.csv")
 
 df.columns = df.columns.str.strip().str.lower().str.replace(" ", "_")
 df = df.drop_duplicates()
@@ -27,7 +27,7 @@ col2.metric("Total Orders", f"{total_orders}")
 col3.metric("Average Order Value", f"{average_order_value:,.2f}")
 
 st.subheader("Top 10 Products by Sales")
-top_products = df.groupby("product_name")["sales"].sum().sort_values(ascending=False).head(10)
+top_products = df.groupby("product")["sales"].sum().sort_values(ascending=False).head(10)
 st.bar_chart(top_products)
 
 st.subheader("Top 10 Customers by Sales")

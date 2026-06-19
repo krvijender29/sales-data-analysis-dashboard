@@ -27,7 +27,7 @@ col2.metric("Total Orders", f"{total_orders}")
 col3.metric("Average Order Value", f"{average_order_value:,.2f}")
 
 st.subheader("Top 10 Products by Sales")
-top_products = df.groupby("product_name")["sales"].sum().sort_values(ascending=False).head(10)
+top_products = df.groupby("product")["sales"].sum().sort_values(ascending=False).head(10)
 st.bar_chart(top_products)
 
 st.subheader("Top 10 Customers by Sales")
