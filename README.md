@@ -35,13 +35,16 @@ The dataset used in this project is a sample sales dataset stored in the `data/`
 It contains columns such as:
 - order_id
 - order_date
-- region
-- product_name
-- category
-- quantity
-- sales
 - customer_name
-- customer_id
+- state
+- category
+- product
+- quantity
+- unit_price
+- discount_%
+- sales
+- profit
+- payment_method
 
 ## Technologies Used
 - Python
@@ -67,7 +70,7 @@ streamlit run main.py
 ```
 
 ## Files Description
-- `data/sales_data.csv` → Raw sales data.
+- `data/Sales_Data_Analysis_Dataset_5000.csv` → Raw sales data.
 - `notebook/sales_analysis.ipynb` → Notebook for analysis.
 - `charts/` → Saved chart images.
 - `main.py` → Streamlit app file.
@@ -84,6 +87,3 @@ streamlit run main.py
 
 [Click here to view the live app](https://sales-data-analysis-dashboard-anxud2pu4nc9sxx69cfpxk.streamlit.app/)
 
-
-## Author
-Created as a sales data analysis project.
