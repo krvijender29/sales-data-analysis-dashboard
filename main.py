@@ -34,6 +34,9 @@ st.subheader("Top 10 Customers by Sales")
 top_customers = df.groupby("customer_id")["sales"].sum().sort_values(ascending=False).head(10)
 st.bar_chart(top_customers)
 
+st.subheader("Top 10 Customers by Sales Table")
+st.dataframe(top_customers)
+
 st.subheader("Monthly Sales Trend")
 df["month"] = df["order_date"].dt.to_period("M").astype(str)
 monthly_sales = df.groupby("month")["sales"].sum().reset_index()
