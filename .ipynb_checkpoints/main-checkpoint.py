@@ -7,7 +7,7 @@ st.set_page_config(page_title="Sales Analysis Dashboard", layout="wide")
 
 st.title("Sales Data Analysis Dashboard")
 
-df = pd.read_csv("data/Sales_Data_Analysis_Dataset_5000.csv")
+df = pd.read_csv("/data/Sales_Data_Analysis_Dataset_Realistic.csv")
 
 df.columns = df.columns.str.strip().str.lower().str.replace(" ", "_")
 df = df.drop_duplicates()
@@ -31,7 +31,7 @@ top_products = df.groupby("product")["sales"].sum().sort_values(ascending=False)
 st.bar_chart(top_products)
 
 st.subheader("Top 10 Customers by Sales")
-top_customers = df.groupby("customer_name")["sales"].sum().sort_values(ascending=False).head(10)
+top_customers = df.groupby("customer_id")["sales"].sum().sort_values(ascending=False).head(10)
 st.bar_chart(top_customers)
 
 st.subheader("Monthly Sales Trend")
